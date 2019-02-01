@@ -6,6 +6,10 @@
 (define-key *global-keymap* "Return" 'lem.language-mode:newline-and-indent)
 (setf *scroll-recenter-p* nil)
 
+(define-key *global-keymap* "C-x u" 'undo)
+
+(setf (variable-value 'lem.line-numbers:line-numbers :global) t)
+
 (let ((asdf:*central-registry* (cons #P"~/.lem/" asdf:*central-registry*)))
   (ql:quickload :lem-my-init))
 
